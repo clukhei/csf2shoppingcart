@@ -8,7 +8,7 @@ import { Component, OnInit, Input, Output, EventEmitter } from '@angular/core';
 export class ItemComponent implements OnInit {
 
  
-  @Input() products = []
+  @Input() products: []
   @Output() quantity= new EventEmitter<string>()
   constructor() { }
 

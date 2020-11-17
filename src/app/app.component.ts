@@ -35,8 +35,15 @@ export class AppComponent {
   }
   removal(name) {
     const itemForRemoval = this.cartArr.findIndex(i => i.name === name)
-    this.cartArr.splice(itemForRemoval,1)
-    this.cartMap.delete(name)
+    if(this.cartMap.get(name) <= 1) {
+      this.cartArr.splice(itemForRemoval,1)
+      this.cartMap.delete(name)
+    } else {
+      this.cartMap.set(name, this.cartMap.get(name)-1)
+      this.cartArr[itemForRemoval].qty = this.cartMap.get(name)
+    }
+ 
+   
 
   }
 }
