@@ -1,7 +1,7 @@
 <table>
-    <tr>
-        <td>{{itemName}}</td>
-        <td><img src="{{itemImgUrl}}" alt="apple"></td>
-        <td><button #newItem [value] ="itemName" (click)= "addToCart(newItem.value)">Add</button></td>
+    <tr *ngFor="let p of products">
+        <td>{{p.name}}</td>
+        <td><img src="{{p.img}}" alt="apple"></td>
+        <td><button (click)= "addToCart(p.name)">Add</button></td>
     </tr>
 </table>

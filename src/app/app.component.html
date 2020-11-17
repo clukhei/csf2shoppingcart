@@ -1,16 +1,18 @@
 <div class="container">
   <div>
     <h1>Please Select</h1>
-    <div *ngFor="let item of itemArray; let i =index">
+    <app-item [products]="itemArray" (quantity) ="getLaptop($event)"></app-item>
+    <!-- <div *ngFor="let item of itemArray; let i =index">
        <app-item itemName={{item.name}} itemImgUrl={{item.img}} (quantity) = "getLaptop($event)"></app-item>
-    </div>
+    </div> -->
   </div>
   <div>
     <h1>My Cart</h1>
   
-    <div *ngFor ="let item of cartArr">
+ <!--    <div *ngFor ="let item of cartArr">
       <app-cart itemName={{item.name}} itemQty={{item.qty}} itemUrl={{item.url}} (removeItem)= "removal($event)"></app-cart>
-    </div>
+    </div> -->
+    <app-cart [cartArr]="cartArr" (removeItem)="removal($event)"></app-cart>
   </div>
 </div>
 
