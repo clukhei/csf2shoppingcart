@@ -7,20 +7,22 @@ import { Component, OnInit, Input, Output, EventEmitter } from '@angular/core';
 })
 export class ItemComponent implements OnInit {
 
-  @Input() itemName: String 
-  @Input() itemImgUrl: String 
+ 
+  @Input() products = []
   @Output() quantity= new EventEmitter<string>()
   constructor() { }
 
 
  
   addToCart(itemName: string) {
+    console.log(itemName)
     this.quantity.emit(itemName)
    
   }
 
 
   ngOnInit(): void {
+    console.log(this.products)
   }
 
 }

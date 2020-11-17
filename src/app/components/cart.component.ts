@@ -8,22 +8,16 @@ import { Component, OnInit, Input, Output, EventEmitter } from '@angular/core';
   styleUrls: ['./cart.component.css']
 })
 export class CartComponent implements OnInit {
-  @Input() itemName: string
-  @Input() itemQty: number
-  @Input() itemUrl: string
+
+  @Input() cartArr : []
   @Output() removeItem = new EventEmitter<string>()
 
    
 
   constructor() { }
-  ngOnInit():void {
-    console.log(this.itemUrl)
-  }
-  ngDoChange():void {
-    console.log(this.itemUrl)
-  }
+  ngOnInit(): void {}
 
-  removeFromCart(): void {
-    this.removeItem.emit(this.itemName)
+  removeFromCart(itemName): void {
+    this.removeItem.emit(itemName)
   }
 }

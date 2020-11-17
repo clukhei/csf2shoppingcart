@@ -2,11 +2,11 @@
 
 
 <table>
-    <tr>
-        <td>{{itemName}}</td>
-        <td><img src="{{itemUrl}}" alt="laptopincart"></td>
+    <tr *ngFor="let c of cartArr">
+        <td>{{c.name}}</td>
+        <td><img src="{{c.url}}" alt="laptopincart"></td>
 
-        <td>qty: {{itemQty}}</td>
-        <td><button (click)="removeFromCart()">Delete</button></td>
+        <td>qty: {{c.qty}}</td>
+        <td><button (click)="removeFromCart(c.name)">Delete</button></td>
     </tr>
 </table>
