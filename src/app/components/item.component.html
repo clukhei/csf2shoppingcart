@@ -1,0 +1,7 @@
+<table>
+    <tr>
+        <td>{{itemName}}</td>
+        <td><img src="{{itemImgUrl}}" alt="apple"></td>
+        <td><button #newItem [value] ="itemName" (click)= "addToCart(newItem.value)">Add</button></td>
+    </tr>
+</table>
