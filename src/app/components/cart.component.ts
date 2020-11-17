@@ -1,4 +1,4 @@
-import { Component, OnInit, Input } from '@angular/core';
+import { Component, OnInit, Input, Output, EventEmitter } from '@angular/core';
 import {List} from '../../list'
 
 
@@ -11,6 +11,7 @@ export class CartComponent implements OnInit {
   @Input() itemName: string
   @Input() itemQty: number
   @Input() itemUrl: string
+  @Output() removeItem = new EventEmitter<string>()
 
    
 
@@ -22,5 +23,7 @@ export class CartComponent implements OnInit {
     console.log(this.itemUrl)
   }
 
-
+  removeFromCart(): void {
+    this.removeItem.emit(this.itemName)
+  }
 }

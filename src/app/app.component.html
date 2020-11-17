@@ -9,11 +9,8 @@
     <h1>My Cart</h1>
   
     <div *ngFor ="let item of cartArr">
-      <app-cart itemName={{item.name}} itemQty={{item.qty}} itemUrl={{item.url}}></app-cart>
+      <app-cart itemName={{item.name}} itemQty={{item.qty}} itemUrl={{item.url}} (removeItem)= "removal($event)"></app-cart>
     </div>
-
-  
-    
   </div>
 </div>
 

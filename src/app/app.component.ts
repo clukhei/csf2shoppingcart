@@ -33,5 +33,10 @@ export class AppComponent {
     console.log(this.cartMap)
     console.log(this.cartArr)
   }
+  removal(name) {
+    const itemForRemoval = this.cartArr.findIndex(i => i.name === name)
+    this.cartArr.splice(itemForRemoval,1)
+    this.cartMap.delete(name)
 
+  }
 }
